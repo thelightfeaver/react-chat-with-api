@@ -1,12 +1,16 @@
 import React from "react"
 import { Route, BrowserRouter, Switch} from "react-router-dom"
-import { NewUser } from "./Components/NewUser";
+import { Signup } from "./Components/Signup";
+import "./Style.scss";
+import { Default } from "./Layout/Default";
 
 export const App = _ =>{
     return(
-        <BrowserRouter pathname={window.location.pathname} >
+        <BrowserRouter pathname={window.location.pathname} > 
             <Switch>
-                <Route path="/" component={NewUser} />
+                <Default>
+                    <Route path="/" component={Signup} />
+                </Default>
             </Switch>
         </BrowserRouter>
     )
