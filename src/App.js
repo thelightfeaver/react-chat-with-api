@@ -1,4 +1,5 @@
 import React from "react"
+import {Chat} from "./Components/Chat"
 import { Route, BrowserRouter, Switch} from "react-router-dom"
 import { Signup } from "./Components/Signup";
 import "./Style.scss";
@@ -9,7 +10,8 @@ export const App = _ =>{
         <BrowserRouter pathname={window.location.pathname} > 
             <Switch>
                 <Default>
-                    <Route path="/" component={Signup} />
+                    <Route exact path="/chat" component={Chat} />
+                    <Route exact path="/" component={Signup} />
                 </Default>
             </Switch>
         </BrowserRouter>
