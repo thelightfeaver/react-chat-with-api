@@ -14,7 +14,7 @@ $color : rgb( 35, 128, 254 );
 
 // style Default layout
 .container{
-
+    
     display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -67,18 +67,45 @@ $color : rgb( 35, 128, 254 );
     }
 }
 
+// style chat component
 .container-chat{
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    align-self: center;
     width: 60%;
-    height: 60%;
+    height: 70%;
+    border: 4px solid black;
+    
+    .box-title{
+        height: 3rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb( 35, 128, 254 );
+        border-bottom: 4px black solid;
 
-    .chat{
+        p{
+            margin:10px;
+            font-size: 2.5rem;
+            font-family: 'Roboto Mono';
+            color:white
+
+        }
+    }
+
+    .box-chat{
+
         height: 100%;
         width: 100%;
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        overflow: auto;
+
     }
 
 
@@ -89,25 +116,98 @@ $color : rgb( 35, 128, 254 );
         align-items: center;
         justify-content: flex-end;
         width: 100%;
+        height: 3rem;
+        border-top: 4px solid black;
+        
+        
 
-        .msg{
+        .inp-msg{
 
             border: none;
-            font-size: 1.1rem;
             font-family: 'Roboto',cursive;
-            height: 100%;
             width: 100%;
+            height: 100%;
+            font-size: 1rem;
+            overflow:auto;
+            resize: none;
+            padding: 10px;
             
         }
         
         .btn_send{
 
-            width: 1ren;
+            width: 3rem;
+            height: 100%;
             border: none;
-            background-color: $color;
+            font-family: 'Roboto',cursive;
+            background: $color;
             color: white;
+            font-size: 1.3rem;
+
+        }
+
+        .bar{
+
+            height: 100%;
+            width: 4px;
+            background: black;
 
         }
     }
     
+}
+// style message components
+.box-message{
+
+    margin-bottom: 10px;
+    border-radius: 15px;
+    padding: 10px;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+   
+    .user-name{
+
+        font-size: 1rem;
+        font-family: 'Roboto Mono';
+        word-wrap: break-word;
+
+    }
+
+    .text-msg{
+        
+        font-size: 1rem;
+        font-family: 'Roboto';
+        letter-spacing: 0;
+        word-wrap: break-word;
+    }
+}
+
+// helpers
+.justify-right{
+    align-self: flex-end;
+}
+
+.justify-left{
+    align-self: flex-start;
+}
+
+.user-self{
+
+    border: 1px $color solid;
+    background: white;
+    .user-name, .text-msg{
+        color:black
+    }
+    
+}
+
+.user-other{
+    background: $color;
+    color: white;
+    .user-name, .text-msg{
+        color:white
+    }
 }
