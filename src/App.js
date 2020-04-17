@@ -4,9 +4,12 @@ import { Route, BrowserRouter, Switch} from "react-router-dom"
 import { Signup } from "./Components/Signup";
 import "./Style.scss";
 import { Default } from "./Layout/Default";
+import { chatStore } from "./Redux/Store";
+import { Provider } from "react-redux";
 
 export const App = _ =>{
     return(
+    <Provider store={chatStore}>
         <BrowserRouter pathname={window.location.pathname} > 
             <Switch>
                 <Default>
@@ -15,6 +18,8 @@ export const App = _ =>{
                 </Default>
             </Switch>
         </BrowserRouter>
+    </Provider>    
+        
     )
 }
 
