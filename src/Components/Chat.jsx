@@ -55,7 +55,7 @@ export const Chat = _ =>{
                 
             </div>
             <div className="container-control">
-                <textarea ref={text} className="inp-msg" cols="5" rows="2" ></textarea>
+                <textarea ref={text} className="input-msg" cols="5" rows="2" ></textarea>
                 <div className="bar"></div>
                 <button onClick={()=> handleClick(text.current)}  type="button"  className="btn_send">
                     <FontAwesomeIcon icon={icon.faPaperPlane} />
