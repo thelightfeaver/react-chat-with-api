@@ -1,13 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
+
+
 
 export const Message = (props) =>{
     
+    const user = useSelector(state => state.user)
 
 
     return(
 
-            props.data.me ?
+            props.data.user === user ?
             (   
+                
                 <div className="box-message justify-right user-self">
                     <p className="user-name ">{props.data.user}</p>
                     <p className="text-msg">{props.data.text}</p>
