@@ -17,9 +17,18 @@ export const Signup = (_) => {
   })
 
   const get_username = (e) =>{
+
     e.preventDefault()
-    signUpUser(e.target.username.value)
-    history.push('/chat')
+    let username  = e.target.username.value.trim()
+
+    if(username)
+    {
+      signUpUser(username)
+      history.push('/chat')
+    }else{
+      alert('Check your username please!')
+    }
+
   }
   return (
     <form  onSubmit={(e)=> get_username(e)} className="form-sign-up" >
