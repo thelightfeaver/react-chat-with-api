@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Message } from "./Message";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import  * as icon   from "@fortawesome/free-solid-svg-icons";
@@ -15,19 +15,25 @@ export const Chat = _ =>{
     const sendMessage = msg => dispatch(fetchSendMessage(msg))
     const getMessage = _ => dispatch(fetchReceiveMessage())
     
-    const handleClick = msg =>{
+    const handleClick =(msg) =>{
 
         const new_msg = {
             'user':userState,
             'text':msg.value
         }
-        sendMessage(new_msg)
         msg.value = ""
-        getMessage()
+        sendMessage(new_msg)
+
+        
     }
     
     
-     
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          getMessage()
+        }, 1000);
+        return () => clearTimeout(timer);
+      });
     
 
     return(
@@ -35,13 +41,10 @@ export const Chat = _ =>{
 
             <div className="box-title">
                 <p>Global Chat</p>
-                
             </div>
 
             <div className="box-chat">
                
-            
-
                 {
                     stateMessages.data.lenght === 0 ? 
                     (false)
@@ -55,7 +58,7 @@ export const Chat = _ =>{
                 
             </div>
             <div className="container-control">
-                <textarea ref={text} className="input-msg" cols="5" rows="2" ></textarea>
+                <input ref={text} className="input-msg" required />
                 <div className="bar"></div>
                 <button onClick={()=> handleClick(text.current)}  type="button"  className="btn_send">
                     <FontAwesomeIcon icon={icon.faPaperPlane} />
