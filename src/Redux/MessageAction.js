@@ -33,10 +33,9 @@ export const fetchReceiveMessage = _ =>{
             headers : {'Content-Type':'application/json'},
             responseType:'json'
         })
-        .then((respose)=>
+        .then((respose)=>{
             dispatch(successSend(respose.data))
-        ).catch((error)=>{
-            console.log(error)
+        }).catch((error)=>{
             // dispatch(failure(true))
         })
     }
