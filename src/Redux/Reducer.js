@@ -6,14 +6,7 @@ const initChatState = {
 
     message:{
 
-        data:[{
-            user:'looo',
-            text:'Almost before we knew it, we had left the ground.'
-        },
-        {
-            user:'hello',
-            text:'lol'
-        }],
+        data:[],
         loading:false,
         error:false
 
