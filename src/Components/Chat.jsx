@@ -34,7 +34,7 @@ export const Chat = _ =>{
     useEffect(() => {
 
         const checkInUsername = _ =>{
-            if(userState){
+            if(!userState){
               
               history.push('/')
             }
