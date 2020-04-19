@@ -8,7 +8,7 @@ export const fetchSendMessage = (msg) =>{
         Axios({
             method:'POST',
             url:'/api/msg/send',
-            baseURL:'http://127.0.0.1:5000/',
+            baseURL:'http://katuishi.ddns.net:5000/',
             headers : {'Content-Type':'application/json'},
             responseType:'json',
             data:msg
@@ -29,7 +29,7 @@ export const fetchReceiveMessage = _ =>{
         Axios({
             method:'GET',
             url:'/api/msg/receive',
-            baseURL:'http://127.0.0.1:5000/',
+            baseURL:'http://katuishi.ddns.net:5000/',
             headers : {'Content-Type':'application/json'},
             responseType:'json'
         })

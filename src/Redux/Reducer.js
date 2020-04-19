@@ -12,7 +12,12 @@ const initChatState = {
 
     },
 
-    user:"sick"
+    alert:{
+        title:"",
+        visible:"invisible"
+    },
+
+    user:""
 }
 
 function getNewMessage(newData,oldData)
@@ -113,6 +118,15 @@ export const chatReducer = (state = initChatState,action)=>{
                 }
             }
             break
+
+        case actionType.STATE_ALERT:
+            return{
+                ...state,
+                alert:{
+                    title: action.payload.title,
+                    visible:action.payload.visible
+                }
+            }
         default:return state;
     }
 }
