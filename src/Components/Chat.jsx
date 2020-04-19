@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import  * as icon   from "@fortawesome/free-solid-svg-icons";
 import { useDispatch,useSelector } from "react-redux";
 import { fetchSendMessage, fetchReceiveMessage } from "../Redux/MessageAction";
+
 export const Chat = _ =>{
 
 
@@ -37,8 +38,9 @@ export const Chat = _ =>{
     
 
     return(
+        
         <div className="container-chat">
-
+            
             <div className="box-title">
                 <p>Global Chat</p>
             </div>
