@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import  * as icon   from "@fortawesome/free-solid-svg-icons";
 import { useDispatch,useSelector } from "react-redux";
 import { fetchSendMessage, fetchReceiveMessage } from "../Redux/MessageAction";
+import { useHistory } from "react-router-dom";
 
 export const Chat = _ =>{
 
-
+    const history = useHistory()
     const text = useRef('')
     const dispatch = useDispatch()
     const userState = useSelector(state => state.user)
@@ -29,11 +30,28 @@ export const Chat = _ =>{
     }
     
     
+    
     useEffect(() => {
+
+        const checkInUsername = _ =>{
+            if(userState){
+              
+              history.push('/')
+            }
+          }
+    
+          checkInUsername()
+    
+          window.addEventListener('beforeunload',checkInUsername)
+
+
         const timer = setTimeout(() => {
           getMessage()
         }, 1000);
-        return () => clearTimeout(timer);
+        return () =>{ 
+            clearTimeout(timer)
+            window.removeEventListener('beforeunload',checkInUsername)
+        }
       });
     
 
