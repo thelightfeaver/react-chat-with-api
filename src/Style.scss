@@ -84,7 +84,7 @@ $color : rgb( 35, 128, 254 );
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgb( 35, 128, 254 );
+        background: black;
         border-bottom: 4px black solid;
 
         p{
@@ -140,7 +140,7 @@ $color : rgb( 35, 128, 254 );
             height: 100%;
             border: none;
             font-family: 'Roboto',cursive;
-            background: $color;
+            background: black;
             color: white;
             font-size: 1.3rem;
 
@@ -186,6 +186,71 @@ $color : rgb( 35, 128, 254 );
     }
 }
 
+// Style components Alert Modal
+.background-modal{
+
+    background: rgba(0, 0, 0, 0.589);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: fixed;
+
+    .container-modal{
+
+        background: white;
+        border-radius: 30px;
+        width: 50%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;;
+        align-items: center;
+        justify-content: center;
+        -webkit-box-shadow: -1px 3px 16px 11px rgba(0,0,0,1);
+        -moz-box-shadow: -1px 3px 16px 11px rgba(0,0,0,1);
+        box-shadow: -1px 3px 16px 11px rgba(0,0,0,1);
+        
+        
+        .icon{
+
+            font-size: 8rem;
+
+        }
+
+        .title-modal{
+
+            font-size: 2rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        
+        }
+
+        .btn-modal{
+
+            margin-top: 20px;
+            font-size: 1.5rem;
+            border: none;
+            color: white;
+            width: 7rem;
+            height: 3rem;
+            background: $color;
+            border-radius: 10px;
+
+        }
+
+        .btn-modal:hover{
+
+            background: rgb(68, 146, 255);;
+
+        }
+
+
+    }
+
+
+}
+
 // helpers
 .justify-right{
     align-self: flex-end;
@@ -197,7 +262,7 @@ $color : rgb( 35, 128, 254 );
 
 .user-self{
 
-    border: 1px $color solid;
+    border: 1px black solid;
     background: white;
     .user-name, .text-msg{
         color:black
@@ -206,9 +271,53 @@ $color : rgb( 35, 128, 254 );
 }
 
 .user-other{
-    background: $color;
+    background: black;
     color: white;
     .user-name, .text-msg{
         color:white
+    }
+}
+
+.invisible{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+@media  (min-width:300px){
+
+
+    
+    .container-chat{
+        width: 90%;
+        
+        .box-title{
+
+            p{
+
+                font-size: 2rem;
+
+            }
+        }
+    }
+
+    .container-modal{
+
+        width: 80%;
+
+        .icon{
+
+            font-size: 5rem;
+
+        }
+
+        .title-modal{
+
+            font-size: 1.5rem;
+                    
+        }
+
     }
 }
