@@ -13,8 +13,9 @@ export const App = _ =>{
         <BrowserRouter pathname={window.location.pathname} > 
             <Switch>
                 <Default>
-                    <Route exact path="/chat" component={Chat} />
                     <Route exact path="/" component={Signup} />
+                    <Route exact path="/chat" component={Chat} />
+                    
                 </Default>
             </Switch>
         </BrowserRouter>
